@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bandari Neeraja | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #38bdf8;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #e5e7eb;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8%;
+      gap: 60px;
+      background: linear-gradient(135deg, #020617, #0f172a);
+    }
+
+    .hero-text {
+      max-width: 600px;
+      animation: slideIn 1.2s ease;
+    }
+
+    .hero-text h2 {
+      font-size: 3rem;
+      color: #38bdf8;
+    }
+
+    .hero-text h3 {
+      margin: 15px 0;
+      font-weight: 400;
+      color: #cbd5f5;
+    }
+
+    .hero-text p {
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #38bdf8;
+      color: #020617;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+    }
+
+    /* Resume Button */
+    .btn-resume {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #10b981; /* teal green */
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 15px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn-resume:hover {
+      transform: scale(1.08);
+      background: #059669; /* darker teal on hover */
+    }
+
+    .hero-img img {
+      width: 260px;
+      border-radius: 50%;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 10px 40px rgba(56,189,248,0.4);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 50px;
+      color: #38bdf8;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about p {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .facts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .fact {
+      background: #020617;
+      padding: 18px 30px;
+      border-radius: 14px;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    .skill {
+      background: #020617;
+      padding: 22px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(56,189,248,0.25);
+    }
+
+    /* ---------- PROJECT ---------- */
+    .project {
+      background: #020617;
+      padding: 30px;
+      border-radius: 18px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* ---------- ABOUT GALLERY ---------- */
+    .about-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-card {
+      background: #020617;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .gallery-card p {
+      padding: 15px;
+      text-align: center;
+      color: #cbd5f5;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-12px) scale(1.04);
+      box-shadow: 0 25px 55px rgba(56,189,248,0.3);
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 12px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 40px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Neeraja</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Bandari Neeraja</h2>
+      <h3>UI / Frontend & Full Stack Developer</h3>
+      <p>
+        Computer Science undergraduate passionate about crafting
+        clean, user-focused and visually engaging web applications.
+      </p>
+      <a href="#contact" class="btn">Know More</a>
+      </div>
+
+    <div class="hero-img">
+     <img src="images/profile.jpg" alt="Bandari Neeraja">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I am a motivated Computer Science student from Ravindra College of Engineering
+      for Women with strong foundations in programming, web development and
+      problem-solving. I enjoy learning new technologies and building real-world solutions.
+    </p>
+
+    <div class="facts">
+      <div class="fact">🎓 CGPA: 7.9</div>
+      <div class="fact">💻 MERN Intern</div>
+      <div class="fact">🚀 Aspiring Full Stack Developer</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">C</div>
+      <div class="skill">HTML & CSS</div>
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>ResolveNow – Online Complaints Platform</h3>
+      <p>
+        Developed a web-based platform allowing users to register and track complaints.
+        Implemented authentication, admin dashboards and automated status updates
+        to improve transparency and efficiency.
+      </p>
+      <p><strong>Technologies:</strong> HTML, CSS, JavaScript, PHP / Node.js, MySQL</p>
+    </div>
+  </section>
+
+  <!-- ABOUT GALLERY -->
+  <section id="gallery">
+    <h2>About Me – Beyond Resume</h2>
+    <div class="about-gallery">
+      <div class="gallery-card">
+        <p>Passionate about coding & problem solving</p>
+      </div>
+      <div class="gallery-card">
+        <p>Interested in modern UI & UX design</p>
+      </div>
+      <div class="gallery-card">
+        <p>Enjoy collaborative team environments</p>
+      </div>
+      <div class="gallery-card">
+        <p>Continuous learning & certifications</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <a href="mailto:neerajabandari123@gmail.com">📧 Email</a>
+    <a href="https://www.linkedin.com/in/bandari-neeraja-9bab4831a/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Neeraja277" target="_blank">GitHub</a>
+    <br>
+     </section>
+
+  <footer>
+    © 2026 Bandari Neeraja | Portfolio
+  </footer>
+
+</body>
+</html>
